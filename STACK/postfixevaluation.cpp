@@ -1,31 +1,32 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include <stack>
 #include <cmath>
 using namespace std;
 
 int main()
 {
-    string prefix;
+    string postfix;
     stack<int> st;
-    
-    cout << "Enter Prefix Expression: ";
-    cin >> prefix;
-    reverse(prefix.begin(),prefix.end());
-    
-    for (char ch : prefix)
+
+    cout << "Enter Postfix Expression: ";
+    cin >> postfix;
+
+    for (char ch :postfix)
     {
+        
+
         
         if (isdigit(ch))
         {
-            st.push(ch - '0');
+            st.push(ch - '0');   
         }
     
         else
         {
-            int a = st.top();
+            int b = st.top();
             st.pop();
 
-            int b = st.top();
+            int a = st.top();
             st.pop();
 
             switch (ch)
@@ -53,7 +54,7 @@ int main()
         }
     }
 
-    cout << "Result = " << st.top() << endl;
+    cout << "Result = " << st.top();
 
     return 0;
 }
