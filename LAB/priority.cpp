@@ -34,7 +34,7 @@ public:
         else {
             Node* temp = front;
 
-            // Find correct position
+            
             while (temp->next != nullptr &&
                    temp->next->priority >= priority) {
                 temp = temp->next;
